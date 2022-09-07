@@ -1,13 +1,13 @@
-﻿double Fibonacci(int n)
-{
-    if (n == 1 || n == 2) return 1;
-    else return Fibonacci(n - 1) + Fibonacci(n - 2);
-}
+﻿// double Fibonacci(int n)
+// {
+//     if (n == 1 || n == 2) return 1;
+//     else return Fibonacci(n - 1) + Fibonacci(n - 2);
+// }
 
-for (int i = 1; i < 100; i++)
-{
-   Console.WriteLine($"{i} = {Fibonacci(i)}"); 
-}
+// for (int i = 1; i < 100; i++)
+// {
+//    Console.WriteLine($"{i} = {Fibonacci(i)}"); 
+// }
 
 
 // double Factorial(int n)
