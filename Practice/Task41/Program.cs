@@ -3,7 +3,7 @@
 // 1, -7, 567, 89, 223-> 3
 Console.Write("How many numbers will you enter? ");
 bool isNumber = int.TryParse(Console.ReadLine(), out int length);
-if(!isNumber || length == 0)
+if (!isNumber || length == 0)
 {
     Console.WriteLine("Invalid input");
 }
