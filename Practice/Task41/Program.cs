@@ -43,4 +43,3 @@ int SumPositiveNumsInSequence(int[] array)
     }
     return count;
 }
-
