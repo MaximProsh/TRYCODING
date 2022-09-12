@@ -27,7 +27,7 @@ void GetPointIntersectionTwoLines(double b1, double k1, double b2, double k2)
         Console.WriteLine("Lines are parallel");
     }
     else
-    {  
+    {
         double x = (b2 - b1) / (k1 - k2);
         double y = k2 * x + b2;
         Console.WriteLine($"The point of lines intersection: ({x}:{y})");
