@@ -5,8 +5,38 @@
 // 5 9 2 3
 // 8 4 2 4
 // 7 -> 0 , 2
-// 5 -> 1 , 0
 // 18 -> нет такого элемента
+Console.WriteLine("Input a number: ");
+int num = int.Parse(Console.ReadLine());
+
+int[,] newArray = CreateRandomArray(3, 4);
+PrintTwoDArray(newArray);
+GetIndexesOfNum(newArray, num);
+
+void GetIndexesOfNum(int[,] array, int num)
+{
+    int[] indexes = new int[2];
+    int count = 0;
+        
+    for (int i = 0; i < newArray.GetLength(0); i++)
+    {
+        for (int j = 0; j < newArray.GetLength(1); j++)
+        {
+            if (newArray[i, j] == num)
+            {
+                indexes[0] = i;
+                indexes[1] = j;
+                Console.WriteLine($"Indexes '{num}' is ({indexes[0]} , {indexes[1]})");
+                count += 1;       
+            }
+        }
+    }
+    if (count == 0)
+        {
+            Console.WriteLine("There is no this element");
+        }
+}
+
 int[,] CreateRandomArray(int m, int n)
 {
     Random rnd = new Random();
@@ -22,8 +52,6 @@ int[,] CreateRandomArray(int m, int n)
     return array;
 }
 
-int[,] newarray = CreateRandomArray(3, 4);
-
 void PrintTwoDArray(int[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
@@ -36,34 +64,4 @@ void PrintTwoDArray(int[,] array)
     }
 }
 
-int[,] GetIndexesOfNum(int[,] array, int num)
-{
-    int[] indexes = new int[2];
-    int count = 0;
-
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            if (array[i, j] == num)
-            {
-                indexes[0] = i;
-                indexes[1] = j;
-                break;
-            }
-        }
-        count += 1;
-        if (count == array.GetLength(0))
-        {
-            Console.WriteLine("There is not this element");
-        }
-    }
-    return array;
-    
-}
-
-
-PrintTwoDArray(newarray);
-GetIndexesOfNum(newarray, 10);
 
