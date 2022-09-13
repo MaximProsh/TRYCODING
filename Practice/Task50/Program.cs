@@ -6,6 +6,7 @@
 // 8 4 2 4
 // 7 -> 0 , 2
 // 18 -> нет такого элемента
+#nullable disable
 Console.WriteLine("Input a number: ");
 int num = int.Parse(Console.ReadLine());
 
@@ -63,5 +64,3 @@ void PrintTwoDArray(int[,] array)
         Console.WriteLine();
     }
 }
-
-
