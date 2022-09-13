@@ -6,25 +6,30 @@
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 int[,] newArray = CreateRandomArray(3, 4);
 PrintTwoDArray(newArray);
+double[] result = AriphmeticAverageOfColumns(newArray);
 
-int sumCol = 0;
+Console.Write("Arithmetic average of each column: ");
+Console.WriteLine(string.Join(", ", result));
 
-for (int i = 0; i < newArray.GetLength(0); i++)
+
+double[] AriphmeticAverageOfColumns(int[,] newArray)
 {
-    sumCol += // завис тут
+    double[] allSums = new double[newArray.GetLength(1)];
 
-    for (int j = 0; j < newArray.GetLength(1); j++)
-
+    for (int i = 0; i < newArray.GetLength(1); i++)
     {
+        double result = 0;
+        double sumCol = 0;
 
-        while (i == tmpIndex)
+        for (int j = 0; j < newArray.GetLength(0); j++)
         {
-            sumCol += newArray[i,j];
-            Console.WriteLine(sumCol);
+            sumCol += newArray[j, i];
         }
+        result = sumCol / newArray.GetLength(0);
+        allSums[i] = Math.Round(result, 1);
     }
+    return allSums;
 }
-
 
 
 int[,] CreateRandomArray(int m, int n)
