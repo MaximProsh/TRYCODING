@@ -1,7 +1,7 @@
 ﻿// Задача 59. Задайте двумерный массив из целых чисел. Напишите
 // программу, которая удалит строку и столбец, на пересечени
 // которых находится наименьший элемент массива.
-int[,] startArray = CreateRandomArray(4, 4);
+int[,] startArray = CreateRandomArray(3, 8);
 PrintTwoDArray(startArray);
 Console.WriteLine();
 int[] iMinNum = GetIndexesMinNum(startArray);
