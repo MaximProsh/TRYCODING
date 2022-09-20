@@ -7,30 +7,29 @@ int m = Convert.ToInt32(Console.ReadLine());
 Console.Write("Input second number: ");
 int n = Convert.ToInt32(Console.ReadLine());
 
+int[] array = new int[n - m + 1];
+Console.WriteLine(string.Join(", ", GetNumsSeriesArray(array, m, n)));
+
+Console.WriteLine(GetNumsSeriesString(m, n));
 
 int[] GetNumsSeriesArray(int[] array, int m, int n, int number = 1)
 // Solution via array output
 {
     array[number - 1] = m;
-    if (m == n) 
+    if (m == n)
     {
         return array;
     }
     else
-    {        
+    {
         return GetNumsSeriesArray(array, m + 1, n, number + 1);
     }
 }
-
-int[] array = new int[n - m + 1];
-Console.WriteLine(string.Join(", ", GetNumsSeriesArray(array, m, n)));
-
 
 string GetNumsSeriesString(int m, int n)
 // Solution via string output
 {
     if (m < n) return $"{m}, " + GetNumsSeriesString(++m, n);
-    
+
     else return $"{m}";
 }
-Console.WriteLine(GetNumsSeriesString(m, n));
